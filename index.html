@@ -2,206 +2,154 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Szalone Biuro Architektury Ptasiej</title>
+<title>Brainrot Bird Architect</title>
 
 <style>
+
 body{
     margin:0;
-    font-family: "Comic Sans MS", cursive;
-    background: linear-gradient(120deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
-    background-size:400% 400%;
-    animation: bgMove 15s infinite alternate;
+    font-family: Arial, Helvetica, sans-serif;
+    background:black;
+    color:white;
     overflow-x:hidden;
 }
 
-@keyframes bgMove{
-    0%{background-position:0% 50%}
-    100%{background-position:100% 50%}
-}
-
-/* nagłówek */
+/* neonowy nagłówek */
 
 header{
     text-align:center;
     padding:60px 20px;
+    background:linear-gradient(90deg,#ff00ff,#00ffff,#ff00ff);
+    animation:flash 5s infinite linear;
+}
+
+@keyframes flash{
+    0%{filter:hue-rotate(0deg)}
+    100%{filter:hue-rotate(360deg)}
 }
 
 h1{
-    font-size:60px;
-    color:white;
-    text-shadow:4px 4px 0 #ff00c8;
-    animation: wiggle 3s infinite;
+    font-size:70px;
+    margin:0;
+    text-shadow:0 0 20px #fff,0 0 40px #ff00ff;
 }
 
-@keyframes wiggle{
-0%{transform:rotate(-2deg)}
-50%{transform:rotate(2deg)}
-100%{transform:rotate(-2deg)}
+/* grid zdjęć */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    padding:40px;
 }
 
-.subtitle{
-    font-size:22px;
-    color:#fff;
-    background:rgba(0,0,0,0.3);
-    display:inline-block;
-    padding:10px 20px;
-    border-radius:20px;
-}
-
-/* sekcja projektów */
-
-.projects{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-    padding:50px;
-}
+/* karta */
 
 .card{
-    width:260px;
-    background:white;
-    border-radius:25px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 0 25px rgba(255,0,255,0.6);
     transition:transform 0.4s;
-    position:relative;
 }
 
 .card:hover{
-    transform:rotate(3deg) scale(1.07);
+    transform:scale(1.05) rotate(2deg);
 }
 
-/* domek */
+/* zdjęcie */
 
-.birdhouse{
-    width:120px;
-    height:100px;
-    background:#ff7a00;
-    margin:0 auto 15px;
-    position:relative;
-    border-radius:10px;
-    animation: spin 8s linear infinite;
+.card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
 }
 
-.birdhouse:before{
-    content:"";
-    position:absolute;
-    top:-40px;
-    left:-10px;
-    width:140px;
-    height:40px;
-    background:#e60073;
-    clip-path:polygon(0% 100%,50% 0%,100% 100%);
+/* podpis */
+
+.caption{
+    padding:20px;
+    font-size:18px;
 }
 
-.birdhouse:after{
-    content:"";
-    width:20px;
-    height:20px;
-    background:black;
-    border-radius:50%;
-    position:absolute;
-    top:35px;
-    left:50%;
-    transform:translateX(-50%);
+.caption strong{
+    color:#00ffff;
 }
 
-@keyframes spin{
-0%{transform:rotate(0)}
-100%{transform:rotate(360deg)}
+/* losowe emoji latające */
+
+.emoji{
+    position:fixed;
+    font-size:30px;
+    animation:float 10s linear infinite;
 }
 
-/* chmurki */
-
-.cloud{
-    position:absolute;
-    background:white;
-    width:120px;
-    height:60px;
-    border-radius:50px;
-    opacity:0.8;
-    animation:fly 40s linear infinite;
+@keyframes float{
+    from{transform:translateY(110vh)}
+    to{transform:translateY(-20vh)}
 }
-
-.cloud:before,.cloud:after{
-    content:"";
-    position:absolute;
-    background:white;
-    width:70px;
-    height:70px;
-    border-radius:50%;
-}
-
-.cloud:before{
-    top:-30px;
-    left:15px;
-}
-
-.cloud:after{
-    top:-20px;
-    right:15px;
-}
-
-@keyframes fly{
-    0%{transform:translateX(-200px)}
-    100%{transform:translateX(120vw)}
-}
-
-/* stopka */
 
 footer{
     text-align:center;
     padding:40px;
-    font-size:18px;
-    color:white;
+    color:#aaa;
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="cloud" style="top:100px; animation-duration:45s;"></div>
-<div class="cloud" style="top:250px; animation-duration:35s;"></div>
-<div class="cloud" style="top:400px; animation-duration:50s;"></div>
-
 <header>
-<h1>🧠 Szalony Architekt Ptasich Domków</h1>
-<p class="subtitle">Projektuję luksusowe wille dla wróbli, apartamenty dla sikorek i penthouse dla gołębia!</p>
+<h1>🧠🐦 BRAINROT BIRD ARCHITECT</h1>
+<p>Projektuję domki dla ptaków odkąd mój mózg zamienił się w ziarenka.</p>
 </header>
 
-<section class="projects">
+<section class="gallery">
 
 <div class="card">
-<div class="birdhouse"></div>
-<h3>Model: Wróbel 3000</h3>
-<p>Minimalistyczny loft z wentylacją i miejscem na ziarenka.</p>
+<img src="https://images.unsplash.com/photo-1444464666168-49d633b86797">
+<div class="caption">
+<strong>Model: Wróbel 9000</strong><br>
+Minimalistyczny loft. Wróble mówią że vibe jest „ziarnisty”.
+</div>
 </div>
 
 <div class="card">
-<div class="birdhouse"></div>
-<h3>Model: Sikorka Deluxe</h3>
-<p>Domek z panoramicznym wejściem i tarasem do śpiewania.</p>
+<img src="https://images.unsplash.com/photo-1501706362039-c6b2a7c3c1f2">
+<div class="caption">
+<strong>Domek Spiralny</strong><br>
+Architekt był zmęczony prostymi liniami więc zrobił spiralę.
+</div>
 </div>
 
 <div class="card">
-<div class="birdhouse"></div>
-<h3>Model: Gołąb Penthouse</h3>
-<p>Najbardziej prestiżowy adres na całym drzewie.</p>
+<img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9">
+<div class="caption">
+<strong>Ptasia Rezydencja Deluxe</strong><br>
+Penthouse dla gołębia który uważa się za króla rynku.
+</div>
 </div>
 
 <div class="card">
-<div class="birdhouse"></div>
-<h3>Model: Papuga Disco</h3>
-<p>Kolorowy dom z akustyką idealną do krzyczenia.</p>
+<img src="https://images.unsplash.com/photo-1464983953574-0892a716854b">
+<div class="caption">
+<strong>Lasowy Apartament</strong><br>
+Widok na drzewa. 10/10 ćwierkania według lokalnych sikorek.
+</div>
 </div>
 
 </section>
 
 <footer>
-🐦 Biuro Architektoniczne „Ćwir & Syn” • Projektujemy domki od 1999
+© 2026 Brainrot Bird Architecture Studio 🐦
 </footer>
+
+<div class="emoji" style="left:10%">🐦</div>
+<div class="emoji" style="left:30%;animation-duration:12s">🧠</div>
+<div class="emoji" style="left:50%;animation-duration:9s">🏠</div>
+<div class="emoji" style="left:70%;animation-duration:14s">🐤</div>
+<div class="emoji" style="left:90%;animation-duration:11s">🧠</div>
 
 </body>
 </html>
