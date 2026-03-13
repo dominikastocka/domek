@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Szalone Biuro Architektury Ptasiej</title>
+
+<style>
+body{
+    margin:0;
+    font-family: "Comic Sans MS", cursive;
+    background: linear-gradient(120deg,#ff9a9e,#fad0c4,#fbc2eb,#a6c1ee);
+    background-size:400% 400%;
+    animation: bgMove 15s infinite alternate;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%}
+    100%{background-position:100% 50%}
+}
+
+/* nagłówek */
+
+header{
+    text-align:center;
+    padding:60px 20px;
+}
+
+h1{
+    font-size:60px;
+    color:white;
+    text-shadow:4px 4px 0 #ff00c8;
+    animation: wiggle 3s infinite;
+}
+
+@keyframes wiggle{
+0%{transform:rotate(-2deg)}
+50%{transform:rotate(2deg)}
+100%{transform:rotate(-2deg)}
+}
+
+.subtitle{
+    font-size:22px;
+    color:#fff;
+    background:rgba(0,0,0,0.3);
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:20px;
+}
+
+/* sekcja projektów */
+
+.projects{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:40px;
+    padding:50px;
+}
+
+.card{
+    width:260px;
+    background:white;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:transform 0.4s;
+    position:relative;
+}
+
+.card:hover{
+    transform:rotate(3deg) scale(1.07);
+}
+
+/* domek */
+
+.birdhouse{
+    width:120px;
+    height:100px;
+    background:#ff7a00;
+    margin:0 auto 15px;
+    position:relative;
+    border-radius:10px;
+    animation: spin 8s linear infinite;
+}
+
+.birdhouse:before{
+    content:"";
+    position:absolute;
+    top:-40px;
+    left:-10px;
+    width:140px;
+    height:40px;
+    background:#e60073;
+    clip-path:polygon(0% 100%,50% 0%,100% 100%);
+}
+
+.birdhouse:after{
+    content:"";
+    width:20px;
+    height:20px;
+    background:black;
+    border-radius:50%;
+    position:absolute;
+    top:35px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+@keyframes spin{
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+}
+
+/* chmurki */
+
+.cloud{
+    position:absolute;
+    background:white;
+    width:120px;
+    height:60px;
+    border-radius:50px;
+    opacity:0.8;
+    animation:fly 40s linear infinite;
+}
+
+.cloud:before,.cloud:after{
+    content:"";
+    position:absolute;
+    background:white;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+}
+
+.cloud:before{
+    top:-30px;
+    left:15px;
+}
+
+.cloud:after{
+    top:-20px;
+    right:15px;
+}
+
+@keyframes fly{
+    0%{transform:translateX(-200px)}
+    100%{transform:translateX(120vw)}
+}
+
+/* stopka */
+
+footer{
+    text-align:center;
+    padding:40px;
+    font-size:18px;
+    color:white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="cloud" style="top:100px; animation-duration:45s;"></div>
+<div class="cloud" style="top:250px; animation-duration:35s;"></div>
+<div class="cloud" style="top:400px; animation-duration:50s;"></div>
+
+<header>
+<h1>🧠 Szalony Architekt Ptasich Domków</h1>
+<p class="subtitle">Projektuję luksusowe wille dla wróbli, apartamenty dla sikorek i penthouse dla gołębia!</p>
+</header>
+
+<section class="projects">
+
+<div class="card">
+<div class="birdhouse"></div>
+<h3>Model: Wróbel 3000</h3>
+<p>Minimalistyczny loft z wentylacją i miejscem na ziarenka.</p>
+</div>
+
+<div class="card">
+<div class="birdhouse"></div>
+<h3>Model: Sikorka Deluxe</h3>
+<p>Domek z panoramicznym wejściem i tarasem do śpiewania.</p>
+</div>
+
+<div class="card">
+<div class="birdhouse"></div>
+<h3>Model: Gołąb Penthouse</h3>
+<p>Najbardziej prestiżowy adres na całym drzewie.</p>
+</div>
+
+<div class="card">
+<div class="birdhouse"></div>
+<h3>Model: Papuga Disco</h3>
+<p>Kolorowy dom z akustyką idealną do krzyczenia.</p>
+</div>
+
+</section>
+
+<footer>
+🐦 Biuro Architektoniczne „Ćwir & Syn” • Projektujemy domki od 1999
+</footer>
+
+</body>
+</html>
